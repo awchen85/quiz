@@ -19,14 +19,16 @@ header {
     justify-content: space-between;
     align-items: right;
 }
-
+#timerDisplay {
+    font-size: 20px;
+    text-align: center;
+}
 content {
     margin-top: 50px;
     text-align: center;
 }
 #content-title {
     font-size: 50px;
-    text-decoration: none;
 }
 .content-text {
     text-align: center;
@@ -34,9 +36,9 @@ content {
 }
 .button {
     text-align: center;
+
 }
 .btn {
-
     background-color: rgb(130, 44, 181);
     border: none;
     color: white;
@@ -49,4 +51,11 @@ content {
     padding: 14px 34px;
     cursor: pointer;
     text-decoration: none;
+    transition-duration: 0.4s;
+    width: 200px;
+    height: 75px;
+}
+.btn:hover {
+    background-color:rgb(130,44,181);
+    color:white;
 }
