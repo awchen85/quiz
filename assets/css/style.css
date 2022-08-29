@@ -13,12 +13,25 @@ header {
     justify-content: space-between;
     margin-bottom: 100px;
 }
+
+.hidden {
+    display: none;
+}
 #time {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: right;
 }
+main {
+text-align: center;
+}
+
+#start-btn {
+    height: 50px;
+    width: 150px;
+}
+
 #timerDisplay {
     font-size: 20px;
     text-align: center;
@@ -34,10 +47,6 @@ content {
     text-align: center;
     font-size: 25px;
 }
-.button {
-    text-align: center;
-
-}
 .btn {
     background-color: rgb(130, 44, 181);
     border: none;
@@ -46,14 +55,13 @@ content {
     border-radius: 25px;
     display: inline-block;
     font-size: 22px;
-    line-height: 22px;
-    margin: 16px 16px 16px 20px;
-    padding: 14px 34px;
+    line-height: 10px;
     cursor: pointer;
     text-decoration: none;
     transition-duration: 0.4s;
-    width: 200px;
-    height: 75px;
+    width: 150px;
+    height:75px;
+    text-align: center;
 }
 .btn:hover {
     background-color:rgb(130,44,181);

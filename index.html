@@ -16,19 +16,29 @@
         </div>
     </header>
 
-<main>
-    <div class="content">
-        <section class="content-text">
-            <h1 id="content-title">Coding Quiz Challenge</h1>
-            <h3 id="quiz-instruction">Try to answer the questions in the time allowed. You'll get points for correct answers, and lose 10s for every incorrect answer. Good luck!</h3>
-        </section>
-        </div>
-    <div class="button">
-        <button id="start-quiz" class="btn">Start Quiz</button>
+<main class="main">
+    <h1>Coding Quiz Challenge</h1>
+    <p class="instructions">
+        <h2>Try to answer the questions in the time allowed. You'll get points for correct answers, and lose 15s for every incorrect answer. Good luck!</h2>
+    </p>
+    <div class="start-btn">
+        <button id="start-btn">Start Quiz</button>
+    </div>
+</main> 
+    <section class="quiz">
+    <h1 class="questions">Question</h1>
+    <div class="answers">
+        <button id="answer-one" class="btn" data-answer="incorect">A</button>
+        <br>
+        <button id="answer-two" class="btn"data-answer="correct">B</button>
+        <br>
+        <button id="answer-three" class="btn"data-answer="incorect">C</button>
+        <br>
+        <button id="answer-four" class="btn"data-answer="incorect">D</button>
     </div>
     </section>
-    </main> 
     <script src="./assets/javascript/js.js"></script>
+    <!-- <script src="./assets/javascript/script.js"></script> -->
 </body>
 
 </html>
