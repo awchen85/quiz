@@ -3,7 +3,7 @@ var currentQuestion = "";
 var currentIndex = 0;
 
 //variable to store time
-var remainingTime = 75;
+var remainingTime = 76;
 var startClick = document.getElementById("start-btn");
 startClick.addEventListener("click", startQuiz);
 // Quiz Section variable
@@ -14,9 +14,6 @@ var answerButtonOne = document.getElementById("answer-one");
 var answerButtonTwo = document.getElementById("answer-two");
 var answerButtonThree = document.getElementById("answer-three");
 var answerButtonFour = document.getElementById("answer-four");
-
-//variable to track whether timer is running or not
-var isStopped = true;
 
 //Action Start
 const startButton = document.getElementById("start-quiz");
@@ -49,37 +46,34 @@ const questionsArray = [
         options: ['6 foot 8 in', '5 foot 9', 'tall af', 'big'] 
     }
 ];
+
+
+// //start timer
+//  const startTimer = () => {
+//      if (isStopped) {
+//          isStopped = false;
+//          countContainer.innerHTML = remainingTime;
+//          remainingTime = setInterval(1000)
+//      }
+//  };
+
 //start timer
-const startTimer = () => {
-    if (isStopped) {
-        isStopped = false;
-        countContainer.innerHTML = remainingTime;
-        timer = setInterval(1000);
-    }
+var startTimer = function() {
+
+}
+setInterval( function(){
+remainingTime--;
+
+if(remainingTime >= 0){
+    id= document.getElementById("timerDisplay")
+    id.innerHTML = remainingTime;
 }
 
-
-
-
-//stop timer
-const stopTimer = () => {
-    isStopped = true;
-    if (timer) {
-        clearInterval(timer);
-    }
-};
-
+}, 1000);
 
 document.querySelector(".quiz").hidden = true;
 
-function startQuiz () {
-    
-    document.querySelector(".main").hidden = true;
-    document.querySelector(".quiz").hidden = false;
 
-    startTimer();
-    populateQuestions();
-}
 
 
 function populateQuestions() {
@@ -137,6 +131,15 @@ setTimeout(function() {
 //stop timer (clearInterval)
 //}
 
+
+function startQuiz () {
+    
+    document.querySelector(".main").hidden = true;
+    document.querySelector(".quiz").hidden = false;
+
+    startTimer();
+    populateQuestions();
+}
 function endQuiz () {
     
     document.querySelector(".quiz").hidden = true;
