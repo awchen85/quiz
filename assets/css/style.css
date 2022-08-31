@@ -29,10 +29,21 @@ text-align: center;
 }
 
 #start-btn {
-    height: 50px;
-    width: 150px;
+    background-color: rgb(130, 44, 181);
+    border: none;
+    color: white;
+    margin: 10px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    width: 20rem;
+    height: 100px;
+    text-align: center;
 }
-
 #timerDisplay {
     font-size: 20px;
     text-align: center;

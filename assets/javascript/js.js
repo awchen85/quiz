@@ -58,14 +58,6 @@ const questionsArray = [
 ];
 
 
-// //start timer
-//  const startTimer = () => {
-//      if (isStopped) {
-//          isStopped = false;
-//          countContainer.innerHTML = remainingTime;
-//          remainingTime = setInterval(1000)
-//      }
-//  };
 
 //start timer
 var startTimer = function() {
@@ -110,9 +102,7 @@ answerButtonFour.addEventListener('click', checkAnswer)
 
 function checkAnswer(e) {
 e.preventDefault()
-console.log('im in the check answer function')
 if (currentQuestion.answer === e.target.innerText) {
-console.log("correct!")
 feedback.textContent="Correct!"
 remainingTime += 10;
 mostRecentScore.push(remainingTime);
@@ -133,22 +123,6 @@ setTimeout(function() {
             showScore();
     }
 } }
-
-
-// var showScore = function () {
-// containerQuestionsEl.classList.add("hide")
-// containerEndEl.classList.remove('hide');
-// containerEndEl.classList.add("show");
-
-// const highScoreString = localStorage.getItem(HIGH_SCORES);
-// const highScores = JSON.parse(highScoreString) ?? [];
-
-// var scoreDisplay = document.createElement("h1");
-// scoreDisplay.innerText = ("Youre final score is " + score + "!");
-// containerScoreEl.appendChild(scoreDisplay);
-// }
-
-localStorage.setItem("highScores", JSON.stringify([]));
 
 
 function gameOver () {
