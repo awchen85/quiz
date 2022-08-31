@@ -4,6 +4,8 @@ const finalScore = document.getElementById("finalScore");
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 finalScore.innerText = mostRecentScore;
 
+const max_score = 5;
+
 const highScores = JSON.parse (localStorage.getItem("highScores")) || [];
 console.log(highScores);
 finalScore.innerText = mostRecentScore;
@@ -21,5 +23,4 @@ const score = {
     name : username.value
 };
 highScores.push(score);
-console.log(highScores);
 };
