@@ -3,7 +3,7 @@ var currentQuestion = "";
 var currentIndex = 0;
 
 //variable to store time
-var remainingTime = 76;
+var remainingTime = 75;
 var startClick = document.getElementById("start-btn");
 startClick.addEventListener("click", startQuiz);
 // Quiz Section variable
@@ -51,18 +51,14 @@ const questionsArray = [
         options: ['Do Overnight Modules', 'Document Object Model', 'Divas Over Men', 'Doo Ooh Moo'] 
     },
     {
-        question: 'how tall is lebron?',
-        answer: '6 foot 8 in',
-        options: ['6 foot 8 in', '5 foot 9', 'tall af', 'big'] 
+        question: 'What format is used to change data between in and out of strings?',
+        answer: 'JSON',
+        options: ['JASON', 'MASON', 'CASON', 'JSON'] 
     }
 ];
 
-
-
 //start timer
 var startTimer = function() {
-
-}
 setInterval( function(){
 remainingTime--;
 
@@ -70,13 +66,10 @@ if(remainingTime >= 0){
     id= document.getElementById("timerDisplay")
     id.innerHTML = remainingTime;
 }
-
 }, 1000);
+};
 
 document.querySelector(".quiz").hidden = true;
-
-
-
 
 function populateQuestions() {
     if(currentIndex > questionsArray.length - 1 || remainingTime === 0) {
@@ -99,7 +92,6 @@ answerButtonThree.addEventListener('click', checkAnswer)
 answerButtonFour.addEventListener('click', checkAnswer)
 
 }
-
 function checkAnswer(e) {
 e.preventDefault()
 if (currentQuestion.answer === e.target.innerText) {
@@ -126,7 +118,6 @@ setTimeout(function() {
 
 
 function gameOver () {
-
     checkHighScore(account.score);
 }
 function startQuiz () {
@@ -138,7 +129,5 @@ function startQuiz () {
     populateQuestions();
 }
 function endQuiz () {
-    
     document.querySelector(".quiz").hidden = true;
-
 }
