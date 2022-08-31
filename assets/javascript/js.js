@@ -19,6 +19,16 @@ var answerButtonFour = document.getElementById("answer-four");
 const startButton = document.getElementById("start-quiz");
 const countContainer = document.getElementById("timerDisplay");
 
+//HTML elements
+var containerQuestionsEl = document.getElementById("questions");
+var containerEndEl = document.getElementById("end-container");
+
+var mostRecentScore = [];
+
+function showScore() {
+    return window.location.assign("./final-Score.html")
+};
+
 const questionsArray = [
     {
         question: 'Which one is a correct tag in HTML?',
@@ -31,14 +41,14 @@ const questionsArray = [
        options: ['coffee', 'Mocha', 'Javascript', 'Beans'],
     },
     {
-        question: 'how tall is lebron?',
-        answer: '6 foot 8 in',
-        options: ['6 foot 8 in', '5 foot 9', 'tall af', 'big'] 
+        question: 'Arrays in Javascript can be used to store',
+        answer: 'All of the Above',
+        options: ['Numbers', 'Strings', 'Booleans', 'All of the Above'] 
     },
     {
-        question: 'how tall is lebron?',
-        answer: '6 foot 8 in',
-        options: ['6 foot 8 in', '5 foot 9', 'tall af', 'big'] 
+        question: 'What does DOM stand for?',
+        answer: 'Document Object Model',
+        options: ['Do Overnight Modules', 'Document Object Model', 'Divas Over Men', 'Doo Ooh Moo'] 
     },
     {
         question: 'how tall is lebron?',
@@ -78,8 +88,8 @@ document.querySelector(".quiz").hidden = true;
 
 function populateQuestions() {
     if(currentIndex > questionsArray.length - 1 || remainingTime === 0) {
-        clearInterval(timer);
-        //endQuiz();
+        localStorage.setItem('mostRecentScore', remainingTime);
+        showScore();
     }
     if(currentIndex > questionsArray.length) return;
 
@@ -105,6 +115,7 @@ if (currentQuestion.answer === e.target.innerText) {
 console.log("correct!")
 feedback.textContent="Correct!"
 remainingTime += 10;
+mostRecentScore.push(remainingTime);
 setTimeout(function() {
     populateQuestions();
 }, 1000);
@@ -119,19 +130,31 @@ setTimeout(function() {
     }, 1000);
     } else {
             clearInterval(timer);
-            //endQuiz();
+            showScore();
     }
 } }
 
 
-//function endQuiz() {
-//hide quiz section
-//show high score
-//make form and button to submit
-//stop timer (clearInterval)
-//}
+// var showScore = function () {
+// containerQuestionsEl.classList.add("hide")
+// containerEndEl.classList.remove('hide');
+// containerEndEl.classList.add("show");
+
+// const highScoreString = localStorage.getItem(HIGH_SCORES);
+// const highScores = JSON.parse(highScoreString) ?? [];
+
+// var scoreDisplay = document.createElement("h1");
+// scoreDisplay.innerText = ("Youre final score is " + score + "!");
+// containerScoreEl.appendChild(scoreDisplay);
+// }
+
+localStorage.setItem("highScores", JSON.stringify([]));
 
 
+function gameOver () {
+
+    checkHighScore(account.score);
+}
 function startQuiz () {
     
     document.querySelector(".main").hidden = true;
