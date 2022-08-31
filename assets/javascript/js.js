@@ -26,7 +26,7 @@ var containerEndEl = document.getElementById("end-container");
 var mostRecentScore = [];
 
 function showScore() {
-    return window.location.assign("./final-Score.html")
+    return window.location.assign("./final-score.html")
 };
 
 const questionsArray = [
